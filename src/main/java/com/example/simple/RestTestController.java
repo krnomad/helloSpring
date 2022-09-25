@@ -1,8 +1,9 @@
 package com.example.simple;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class RestTestController {
@@ -11,8 +12,14 @@ public class RestTestController {
         return str + " : Rest Test 완료!!!";
     }
 
-    @RequestMapping("/yamlLocation")
-    public String yamlLocation() {
-        return "a";
+    @RequestMapping("/sourcegit")
+    @ResponseBody() // JSON
+    public Map<String, String> yamlLocation() {
+        Map<String, String> data = new HashMap<>();
+        data.put("author", "jong");
+        data.put("version", "v1");
+        data.put("url", "172.19.228.157:8881/files/source_git.yml"); // TODO: file url shall be defined by deployed url
+
+        return data;
     }
 }

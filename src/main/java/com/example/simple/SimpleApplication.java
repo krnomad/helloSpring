@@ -11,5 +11,4 @@ public class SimpleApplication {
 		String data = hello.getData();
 		SpringApplication.run(SimpleApplication.class, args);
 	}
-
 }

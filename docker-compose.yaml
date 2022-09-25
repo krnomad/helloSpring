@@ -1,0 +1,6 @@
+spring:
+  #  image: simple_spring:v1
+  build: .
+  container_name: simple_spring
+  ports:
+    - "8881:8881"
